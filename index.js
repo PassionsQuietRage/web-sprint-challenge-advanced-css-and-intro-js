@@ -208,10 +208,10 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-console.log(artists[0].name);
+console.log(artists[0]);
 
 //(2) Bio of the third artist (2nd index) in the array 
-console.log(artists[2].name);
+console.log(artists[2]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -229,10 +229,10 @@ Use getArtistByIndex to do the following:
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array, number) {
-  return `The artist at index is ${array[number].name}.`
+  return `the artist at index ${array[number].id} is ${array[number].name}`;
 }
 
-console.log(getArtistByIndex(artists, 4));
+console.log(getArtistByIndex(artists, 2));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -244,7 +244,7 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(/*Your Code Here*/) {
-  /*Your Code Here*/
+  //artists.split()
 }
 
 
@@ -258,10 +258,15 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, id) {
+  for(let i = 0; i < array.length; i-1){
+    if(array[i] === id){
+      array.splice(i, 1);
+    }
+  }
+    return array.length;
 }
-
+console.log(removeArtist(artists.length, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
